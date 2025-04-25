@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Live PDF Sync</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="/static/style.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.4.120/pdf.min.js"></script>
+  <script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
+</head>
+<body>
+  {% if role == "admin" %}
+  <form action="/upload" method="post" enctype="multipart/form-data">
+    <input type="file" name="pdf" accept="application/pdf" required />
+    <button type="submit">Upload PDF</button>
+  </form>
+  {% endif %}
+  
+  <div id="pdf-viewer"></div>
+  <script>
+    const ROLE = "{{ role }}";
+  </script>
+  <script src="/static/viewer.js"></script>
+</body>
+</html>
