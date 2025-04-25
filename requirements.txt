@@ -3,3 +3,5 @@ Flask-SocketIO==5.3.4
 eventlet==0.33.3
 PyPDF2==3.0.1
 pdfminer.six==20221105
+firebase-admin==6.4.0
+gunicorn==21.2.0
